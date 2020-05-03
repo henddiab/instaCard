@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf='!tagsGroupArr' class="loader"></div>
+  <div class="row">
+    <div class="offset-2 col-8 d-table" *ngFor='let tag of tagsGroupArr'>
+
+      <div class="d-table-cell">
+        <p class="tagPrefix">{{tag[0]}}</p>
+      </div>
+
+      <div class="d-flex justify-content-between" *ngFor='let tagDetails of tag[1]'>
+        <p routerLink="/tag/{{tagDetails.tag}}" class="tagNmae">{{tagDetails.tag}}</p>
+        <p class="percentage">{{tagDetails.percentage}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>

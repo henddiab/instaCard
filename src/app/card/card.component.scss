@@ -1,0 +1,51 @@
+@import './../../styles.scss';
+
+
+.card__content {
+
+  &__tags p,
+  &__name p {
+    color: $blueColor;
+    padding: 0 2px;
+    cursor: pointer;
+    font-weight: normal;
+    text-transform: capitalize;
+  }
+
+  &__tags button {
+    color: $whiteColor;
+    text-transform: capitalize;
+    background-color: $baseColor;
+    border: none;
+    padding: 6px 12px;
+    display: block;
+  }
+
+  &__tags p.tag::after {
+    content: ',';
+  }
+
+  &__tags p.tag:last-child::after {
+    content: '';
+  }
+
+  .next,
+  .prev {
+    position: fixed;
+    top: 50%;
+    background-color: $baseColor;
+    color: $whiteColor;
+    opacity: .8;
+    padding: 30px 10px;
+    border: none;
+  }
+
+
+  .next {
+    right: 0;
+  }
+
+  .prev {
+    left: 0;
+  }
+}

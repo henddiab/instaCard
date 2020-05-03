@@ -1,0 +1,29 @@
+<div class="container">
+  <div *ngIf='!cardPrev || !cardNext || !card' class="loader"></div>
+  <div class="row card__content" *ngIf='card'>
+
+    <div class="col-md-1">
+      <button class="prev" *ngIf='cardPrev' routerLink="/card/{{cardPrev.card_id}}"><i
+          class="fas fa-angle-left"></i></button>
+    </div>
+
+    <div class="col-md-6 card__content__name py-5">
+      <p class="h4">{{card.name}}</p>
+      <div class="card__content__name__img py-2">
+        <img src="./../../assets/images/diy-mothers-day-cards-1584479679.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="col-md-4 card__content__tags py-5">
+      <p class="h4">top tags</p>
+      <p class="d-inline-block tag" *ngFor='let tag of tags' routerLink="/tag/{{tag.tag}}">{{tag.tag}}</p>
+      <button routerLink="/tags">see all tags</button>
+    </div>
+
+    <div class=" col-md-1">
+      <button class="next" *ngIf='cardNext' routerLink="/card/{{cardNext.card_id}}"><i
+          class="fas fa-angle-right"></i></button>
+    </div>
+
+  </div>
+</div>

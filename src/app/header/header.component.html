@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" routerLink="/">instacard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <form class="form-inline my-2 my-lg-0">
+    <input #inputSearch class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+      (input)="searcForCard($event)">
+
+    <div class=" searchResults  d-block text-center">
+      <div *ngIf='!searchResult' class="loader"></div>
+      <a (click)="handlingSearch(inputSearch)" class="d-block text-dark style-none py-1 w-100" *ngFor="let data of searchResult " routerLink="/card/{{data.card_id}}">{{data.name}}</a>
+    </div>
+
+  </form>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">explore all <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <div ngbDropdown>
+          <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>categories</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+            <button *ngFor='let cat of categories' ngbDropdownItem routerLink="/cat/{{cat.card_cat_id}}/{{cat.title}}">{{cat.title}}
+              <span>({{cat.card_count}})</span>
+            </button>
+          </div>
+        </div>
+      </li>
+      <li class=" nav-item">
+        <a class="nav-link" routerLink="/tags">tags</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">design your card</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">sign in</a>
+      </li>
+    </ul>
+  </div>
+</nav>

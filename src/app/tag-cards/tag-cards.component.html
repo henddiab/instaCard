@@ -1,0 +1,30 @@
+
+<div class="container-fluid py-5">
+    <div *ngIf='!cards' class="loader"></div>
+  
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-6" *ngFor='let card of cards'>
+          <div class="card px-2 py-2" routerLink="/card/{{card.card_id}}">
+            <img src="./../../assets/images/diy-mothers-day-cards-1584479679.jpg" class="card-img-top" alt="...">
+            <div>
+              <div class="d-flex">
+                <div class="small-img">
+                  <img src="./../../assets/images/Balloon_Bouquet_Purple_Cover_x400.jpg" alt="">
+                </div>
+                <div class="card_data d-flex flex-column justify-content-center text-left">
+                  <p class="mb-0">{{card.user.first_name}} {{card.user.last_name}}</p>
+                  <div class="d-flex">
+                    <span><i class="far fa-eye"></i> {{card.view}} </span>
+                    <span><i class="far fa-comment"></i> {{card.likes}} </span>
+                    <span><i class="far fa-heart"></i> {{card.comments}} </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

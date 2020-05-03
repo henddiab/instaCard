@@ -1,0 +1,25 @@
+@import './../../styles.scss';
+
+
+form {
+  position: relative;
+
+  .searchResults {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 9999;
+    width: 300px;
+    box-shadow: 1px 1px 3px gray, -1px -1px 3px gray;
+    background-color: white;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+
+.navbar {
+  background-color: $blueColor;
+}
